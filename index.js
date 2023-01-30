@@ -10,7 +10,6 @@ app.set('views','./views');
 
 app.use(express.static('static'));
 app.use('/',require('./routes/home'));
-app.use(bodyParser.urlencoded({extended : false}));    
 
 
 app.listen(port, function(error){

@@ -12,10 +12,13 @@
         <input type="password" placeholder="Password" name="password" required>
         <button id="login">Login</button>
         <div id="space"></div>
-        <div id="my-signin2"></div>
+        <div id="my-signin2" ></div>
+        
       </form>
 
       <script>
+       
+
         function onSuccess(googleUser) {
           console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
         }
@@ -27,7 +30,6 @@
             'scope': 'profile email',
             'width': 150,
             'height': 30,
-           
             'longtitle': true,
             'theme': 'dark',
             'onsuccess': onSuccess,
@@ -37,6 +39,7 @@
       </script>
 
       <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+
       
 </body>
 </html>
