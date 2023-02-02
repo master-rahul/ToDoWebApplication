@@ -3,8 +3,11 @@ const db = require('../config/mongoose');                                       
 const UserLoginInfo = require('../models/todoList');
 
 module.exports.load = function(request, response) {
-
+    if (response.verified) console.log('hello');
+    else console.log('bye');
+    // if(!request.verified) return response.end('Sorry You are Not Authorized');
     UserLoginInfo.find({}, function (error, tasks) {
+       
         if (error) {
             console.log('Error in fetching tasks from Db');
             return;

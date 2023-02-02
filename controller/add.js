@@ -15,7 +15,7 @@ module.exports.add = function (request, response) {
             return;
         }
         else {
-            console.log('Adding In Database', newTask);
+            console.log('Adding In Database');
             return response.redirect('back');
         }
         

@@ -1,5 +1,5 @@
 const db = require('../config/mongoose');                                            // Fetching Mongoose configuration file
-const taskInfoList = require('../models/todoList');
+const taskInfoList = require('../models/todoList');                                  // Fetching Mongoose instance for the database
 
 module.exports.remove = function (request, response) {
     taskInfoList.findByIdAndDelete(request.body.id, function (error) {
@@ -7,13 +7,12 @@ module.exports.remove = function (request, response) {
             console.log('Error in Deleting an object form Database');
             return;
         } else {
-            console.log(request.body.id);
             taskInfoList.find({},function (error, list) {
                 if(error){
                     console.log('error fetching list');
                 }else console.log(list);
             });
-            return response.redirect('/application');
+            return response.redirect('back');
         }
     });
 }

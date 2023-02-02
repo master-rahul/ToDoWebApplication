@@ -3,7 +3,5 @@ const taskInfoList = require('../models/todoList');
 
 module.exports.edit = function (request, response) {
   
-            return response.redirect('/application');
-       
-   
+            return response.redirect('back');
 }
