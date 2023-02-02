@@ -1,0 +1,428 @@
+body{
+	background: url('../images/todo_background.jpg');
+	background-position: center;
+	background-size: cover;
+}
+
+#main{
+	background-color: rgb(240,240,240); 
+	height: 80vh;
+	width: 70vw;
+	margin: 7vh auto;
+	min-height: 800px;
+	min-width: 1200px;
+	border-radius: 10px;
+	border-color: blue;
+	border-width: 1px;
+	border-style: solid;
+	box-shadow: 10px 10px 5px blue;
+
+}
+#heading{
+	
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom: 1px solid blue;
+	background-color: rgb(250,250,250);
+}
+#heading section{
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom: 1px solid blue;
+}
+
+#add-task{
+	height: 30%;
+	border-bottom: 1px solid blue;
+	display: flex;
+}
+
+#task{
+  width: 20%;
+  height: 33%;
+  margin: 0px auto;
+}
+
+.style-1 {
+  font-weight: 600;
+  border: solid $border-width $color;
+  outline: 0;
+  padding: 1rem 4rem;
+  font-size: 1.5rem;
+  letter-spacing: .08rem;
+  background-color: blue;
+  border-radius: $radius;
+  position: relative;
+  cursor: pointer;
+  margin-left: 40%;
+  margin-top: 2%;
+  &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $color2;
+      z-index: -1;
+      border-radius: $radius;
+      border: solid $border-width $color;
+      transition: all $transition ease-in-out;
+  }
+}
+button.style-1 {
+  &::after {
+     width: 90%;
+     height: 90%;
+  }
+  &:hover {
+    &::after {
+      width: 100%;
+      height: 100%;
+      top: $offset;
+      left: $offset;
+    }
+  }
+}
+
+#form{
+	height: 100%;
+	max-width: 70%;
+  min-width: 70%;
+	border-right: 1px solid blue;
+	display: inline;
+  border-bottom : 2px solid blue;
+}
+
+#timer{
+	height: 100%;
+	width: 30%;
+	display: block;
+  background-color: lightblue;
+  border-bottom : 2px solid blue;
+}
+
+
+/*input---------------------------------------------------------------------*/
+
+#desc{
+  width: 99%;
+  min-height: 95px;
+  font-size: 18px;
+  outline-color: blue;
+  rows: 5;
+  box-shadow: 4px 4px 2px blue;
+  margin-bottom: 2px;
+}
+#details {
+  padding: 10px 5px;
+  width: 17.75%;
+  font-family: monospace;
+  text-decoration: blink;
+  font-size: 1rem;
+  outline-color: blue;
+  box-shadow: 4px 4px 2px blue;
+}
+
+#time1{
+  padding: 10px 5px;
+  width: 30%;
+  font-family: monospace;
+  border: 1px solid black;
+  font-size: 1rem;
+  box-shadow: 4px 4px 2px blue;
+   outline-color: blue;
+}
+
+#time2{
+  padding: 10px 5px;
+  width: 30%;
+  font-family: monospace;
+  border: 1px solid black;
+  font-size: 1rem;
+  box-shadow: 4px 4px 2px blue;
+  outline-color: blue;
+}
+#count-down{
+  width: 80%;
+  text-align: center;
+  margin-top: 20px;
+  height: 30%;
+  background-color: violet;
+  margin: 5% auto;
+  font-family: monospace;
+  font-size: 60px;
+  font-weight: 700;
+  padding : 5px 10px;
+  border: 1px solid blue;
+  box-shadow: 4px 4px 2px blue;
+  border-radius: 15px;s
+}
+#list{
+  height: 498px;
+  overflow: scroll;
+}
+
+#todo-list{
+  min-height: 97px;
+  min-width: 100%;
+  border-bottom: 2px solid blue;
+  display: inline-flex;
+}
+
+#task-id{
+  width: 140px;
+  height: 100px;
+  display: inline;
+  border-right: 2px solid blue;
+
+}
+#task-id p{
+  margin-top: 36px;
+  font-family: monospace;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 700;
+  
+}
+#task-content{
+  margin-left: 2px;
+  width: 600px;
+  height: 100px;
+  display: inline;
+  border-right: 1px solid blue;
+
+
+}
+#task-content p{
+  margin-top: 18px;
+  margin-left: 16px;
+  text-align: left;
+  font-size: 25px;
+  font-family: monospace;
+  margin-bottom: 40px;
+  max-height: 65px;
+  overflow-y: scroll; /* Show vertical scrollbar */
+  overflow-x: scroll; /* Show horizontal scrollbar */ß
+}
+
+#task-time{
+  margin-left: 2px;
+  width: 300px;
+  height: 100px;
+  display: inline;
+  border-right: 1px solid blue;
+
+}
+#task-time-start{
+  width: 100%;
+  height: 50%;
+  display: inline-block;
+  border-botton: 1px solid blue;
+}
+#task-time-end{
+ 
+  width: 100%;
+  height: 50%;
+  display: inline-block;
+}
+
+#task-time-start p{
+  font-size: 17px;
+  font-family: monospace;
+  margin-top: 15px;
+  margin-left: 10px;
+}
+
+#task-time-end p{
+  font-size: 17px;
+  font-family: monospace;
+  margin-top: 15px;
+  margin-left: 10px;
+}
+
+
+#task-options{
+ 
+  margin-left: 2px;
+  width: 152px;
+  height: 100px;
+  display: inline-flex;
+}
+
+#task-edit{
+  width: 50%;
+  height: 100%;
+  display: inline;
+}
+#task-remove{
+   width: 50%;
+  height: 100%;
+  display: inline;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*Start Button--------------------------------------------------------------*/
+
+
+
+.glow-on-hover {
+    margin-left: 30px;
+    margin-top : 10px;
+    width: 35%;
+    height: 40%;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 60%;
+    font-size: 27px;
+    font-family: monospace;
+    background-color: lightblue;
+}    
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 60%;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 60%;
+    background-color: blue;
+    box-shadow: 6px 6px 3px grey;
+    border: 1px solid black;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+/*-----------------------------------------------------------------------*/
+
+:root {
+  --background-color: rgb(200,160,180);
+  --text-color: rgb(255,255,255);
+}
+
+.wrapper {
+  display: grid;
+  place-content: center;
+  background-color: var(--background-color);
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(1.5rem, 1rem + 18vw, 3rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-color);
+}
+
+.wrapper > div {
+  grid-area: 1/1/-1/-1;
+}
+.top {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 48%, 0% 58%);
+}
+.bottom {
+  clip-path: polygon(0% 60%, 100% 50%, 100% 100%, 0% 100%);
+  color: transparent;
+  background: -webkit-linear-gradient(177deg, black 53%, var(--text-color) 65%);
+  background: linear-gradient(177deg, black 53%, var(--text-color) 65%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  transform: translateX(-0.02em);
+}
+/*-----------------------------------------------------------------------------------*/
+@font-face {
+  font-family: 'digital-7';
+  src: url('../fonts/digital-7.ttf');
+}
+
+/* DAYS OF THE WEEK */
+div.days {
+  margin: 0 auto;
+  color: #131212;
+}
+div.days .day { display: inline-block; }
+div.days .day p {
+  font-size: 12px;
+  font-weight: bold;
+  font-family: sans-serif;
+  text-transform: uppercase;
+}
+/* CLOCK */
+div.clock { margin: 5px 0; }
+div.clock div {
+  display: inline-block;
+  position: relative;
+}
+div.clock div p {
+  font-size: 100px;
+  position: relative;
+  z-index: 100;
+}
+div.clock .placeholder {
+  color: #131212;
+  position: absolute;
+  top: 0;
+  z-index: 50;
+}
+div.clock .meridian { margin-left: 15px; }/*END CLOCK*/
+/* AM OR PM*/
+.am-pm {
+  font-family: sans-serif;
+  text-transform: uppercase;
+  width: 20px;
+}
+div.am-pm div p {
+  font-size: 12px;
+  font-weight: bold;
+  width: 100%;
+}
+.am, .pm { color: #131212; }
+/*CLASS THAT CHANGES COLOR OF TEXT TO APPEAR LIKE ITS "ON"*/
+.light-on { color: #ffffff; }
