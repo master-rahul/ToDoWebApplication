@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Welcome</title>
+        <link rel="stylesheet" type="text/css" href="/css/login.css">
+        <meta name="google-signin-client_id" content="875376844819-g7f5k030cfv7ku8t2qf6m5eepp1vfkdv.apps.googleusercontent.com">
+
+    </head>
+<body>
+    <form class="login" method="post" action="/user/verification">
+        <input type="text" placeholder="Username" name="username" required onkeydown="if(['Space'].includes(arguments[0].code)){return false;}" onpaste="return false;">
+        <input type="password" placeholder="Password" name="password" required>
+        <button id="login">Login</button>
+        <div id="space"></div>
+        <div id="my-signin2" ></div>
+        
+      </form>
+
+      <script>
+       
+
+        function onSuccess(googleUser) {
+          console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+        }
+        function onFailure(error) {
+          console.log(error);
+        }
+        function renderButton() {
+          gapi.signin2.render('my-signin2', {
+            'scope': 'profile email',
+            'width': 150,
+            'height': 30,
+            'longtitle': true,
+            'theme': 'dark',
+            'onsuccess': onSuccess,
+            'onfailure': onFailure
+          });
+        }
+      </script>
+
+      <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+
+      
+</body>
+</html>
+
+  
+</body>
+</html>
