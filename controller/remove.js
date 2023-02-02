@@ -7,11 +7,7 @@ module.exports.remove = function (request, response) {
             console.log('Error in Deleting an object form Database');
             return;
         } else {
-            taskInfoList.find({},function (error, list) {
-                if(error){
-                    console.log('error fetching list');
-                }else console.log(list);
-            });
+            console.log('Removed from Database');
             return response.redirect('back');
         }
     });
