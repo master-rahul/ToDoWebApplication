@@ -44,18 +44,21 @@ body{
 }
 
 .style-1 {
+  color: white;
+  font-family: monospace;
   font-weight: 600;
   border: solid $border-width $color;
   outline: 0;
-  padding: 1rem 4rem;
-  font-size: 1.5rem;
+  padding: 0.8rem 3rem;
+  font-size: 2rem;
   letter-spacing: .08rem;
-  background-color: blue;
+  background-color: rgb(98, 88, 240);
   border-radius: $radius;
   position: relative;
   cursor: pointer;
-  margin-left: 40%;
-  margin-top: 2%;
+  margin-left: 37%;
+  margin-top: 10px;
+  border-radius: 15px;
   &::after {
       content: '';
       position: absolute;
@@ -72,8 +75,8 @@ body{
 }
 button.style-1 {
   &::after {
-     width: 90%;
-     height: 90%;
+     width: 80%;
+     height: 80%;
   }
   &:hover {
     &::after {
@@ -92,13 +95,14 @@ button.style-1 {
 	border-right: 1px solid blue;
 	display: inline;
   border-bottom : 2px solid blue;
+  background-color: rgb(215, 222, 224);
 }
 
 #timer{
 	height: 100%;
 	width: 30%;
 	display: block;
-  background-color: lightblue;
+  background-color: rgb(155, 127, 239);
   border-bottom : 2px solid blue;
 }
 
@@ -106,11 +110,12 @@ button.style-1 {
 /*input---------------------------------------------------------------------*/
 
 #desc{
+  color: black;
   width: 99%;
-  min-height: 95px;
+  min-height: 100px;
   font-size: 18px;
   outline-color: blue;
-  rows: 5;
+  background-color: rgb(221, 221, 248);
   box-shadow: 4px 4px 2px blue;
   margin-bottom: 2px;
 }
@@ -122,6 +127,7 @@ button.style-1 {
   font-size: 1rem;
   outline-color: blue;
   box-shadow: 4px 4px 2px blue;
+  background-color: rgb(202, 202, 210);
 }
 
 #time1{
@@ -132,6 +138,7 @@ button.style-1 {
   font-size: 1rem;
   box-shadow: 4px 4px 2px blue;
    outline-color: blue;
+  background-color: rgb(202, 202, 210);
 }
 
 #time2{
@@ -142,6 +149,7 @@ button.style-1 {
   font-size: 1rem;
   box-shadow: 4px 4px 2px blue;
   outline-color: blue;
+  background-color: rgb(202, 202, 210);
 }
 #count-down{
   width: 80%;
@@ -156,7 +164,7 @@ button.style-1 {
   padding : 5px 10px;
   border: 1px solid blue;
   box-shadow: 4px 4px 2px blue;
-  border-radius: 15px;s
+  border-radius: 15px;
 }
 #list{
   height: 498px;
@@ -175,9 +183,11 @@ button.style-1 {
   height: 100px;
   display: inline;
   border-right: 2px solid blue;
+  background-color: rgb(117, 117, 217);
 
 }
 #task-id p{
+  color: white;
   margin-top: 36px;
   font-family: monospace;
   font-size: 20px;
@@ -191,34 +201,36 @@ button.style-1 {
   height: 100px;
   display: inline;
   border-right: 1px solid blue;
-
+  background-color: rgb(91, 91, 243);
 
 }
 #task-content p{
+  color:white;
   margin-top: 18px;
   margin-left: 16px;
   text-align: left;
   font-size: 25px;
   font-family: monospace;
   margin-bottom: 40px;
-  max-height: 65px;
+  max-height: 63px;
   overflow-y: scroll; /* Show vertical scrollbar */
-  overflow-x: scroll; /* Show horizontal scrollbar */ß
+  overflow-x: scroll; /* Show horizontal scrollbar */
 }
 
 #task-time{
+  color: white;
   margin-left: 2px;
   width: 300px;
   height: 100px;
   display: inline;
   border-right: 1px solid blue;
-
+  background-color: rgb(134, 134, 229);
 }
 #task-time-start{
   width: 100%;
   height: 50%;
   display: inline-block;
-  border-botton: 1px solid blue;
+  border-bottom: 1px solid blue;
 }
 #task-time-end{
  
@@ -332,7 +344,7 @@ button.style-1 {
     left: 0;
     top: 0;
     border-radius: 60%;
-    background-color: blue;
+    background-color: rgb(98, 88, 240);
     box-shadow: 6px 6px 3px grey;
     border: 1px solid black;
 }
@@ -346,7 +358,7 @@ button.style-1 {
 /*-----------------------------------------------------------------------*/
 
 :root {
-  --background-color: rgb(200,160,180);
+  --background-color: rgb(98, 88, 240);
   --text-color: rgb(255,255,255);
 }
 
@@ -377,52 +389,3 @@ button.style-1 {
   transform: translateX(-0.02em);
 }
 /*-----------------------------------------------------------------------------------*/
-@font-face {
-  font-family: 'digital-7';
-  src: url('../fonts/digital-7.ttf');
-}
-
-/* DAYS OF THE WEEK */
-div.days {
-  margin: 0 auto;
-  color: #131212;
-}
-div.days .day { display: inline-block; }
-div.days .day p {
-  font-size: 12px;
-  font-weight: bold;
-  font-family: sans-serif;
-  text-transform: uppercase;
-}
-/* CLOCK */
-div.clock { margin: 5px 0; }
-div.clock div {
-  display: inline-block;
-  position: relative;
-}
-div.clock div p {
-  font-size: 100px;
-  position: relative;
-  z-index: 100;
-}
-div.clock .placeholder {
-  color: #131212;
-  position: absolute;
-  top: 0;
-  z-index: 50;
-}
-div.clock .meridian { margin-left: 15px; }/*END CLOCK*/
-/* AM OR PM*/
-.am-pm {
-  font-family: sans-serif;
-  text-transform: uppercase;
-  width: 20px;
-}
-div.am-pm div p {
-  font-size: 12px;
-  font-weight: bold;
-  width: 100%;
-}
-.am, .pm { color: #131212; }
-/*CLASS THAT CHANGES COLOR OF TEXT TO APPEAR LIKE ITS "ON"*/
-.light-on { color: #ffffff; }
