@@ -104,37 +104,44 @@
         </div>
 
         <div id="list">
-
-
-
-            <div id="todo-list">
-                <div id="task-id" class="text-style-1">
-                    <p> Task 1 </p>
-                </div>
-                <div id="task-content" class="text-style-1">
-                    <p> Get the VegetablesGet the VegetablesGet the VegetablesGet the VegetablesGet the VegetablesGet
-                        the VegetablesGet the Vegetables</p>
-                </div>
-                <div id="task-time">
-                    <div id="task-time-start" class="text-style-1">
-                        <p> Start : 10/02/2022 10:00 AM</p>
+            <%for(var i = 1; i <= taskList.length; i++){%>
+                <div id="todo-list">
+                    <div id="task-id" class="text-style-1">
+                        <p> Task <%=i%> </p>
                     </div>
-                    <div id="task-time-end" class="text-style-1">
-                        <p> &nbsp;End &nbsp;: 10/02/2022 11:00 AM</p>
+                    <div id="task-content" class="text-style-1">
+                        <p><%=taskList[i-1].description%></p>
+                    </div>
+                    <div id="task-time">
+                        <div id="task-time-start" class="text-style-1">
+                            <% let dateOptions={ year: 'numeric' , month: 'long' , day: 'numeric' }; %>
+                            <% let startDate=(new Date(taskList[i-1].startDateTime.toISOString())).toLocaleDateString("en-US", dateOptions); %>
+                            <p> Start : <%=startDate%></p>
+                        </div>
+                        <div id="task-time-end" class="text-style-1">
+                            <% let endDate=(new Date(taskList[i-1].endDateTime.toISOString())).toLocaleDateString("en-US", dateOptions); %>
+                            <p> &nbsp;End &nbsp;: <%=endDate%></p>
+                        </div>
+                    </div>
+                    <div id="task-options">
+                        <div id="task-edit">
+                            <form action="/todo/edit" method="post">
+                                <input type="hidden" name="id" value="<%=taskList[i-1]._id%>">
+                                <button style="margin-top: 30px; margin-left: 20px; box-shadow: 4px 4px 2px blue;"><img
+                                    src="../icons/edit.png" width="20px" height="20px"></button>
+                            </form>
+                        </div>
+                        <div id="task-remove">
+                            <form action="/todo/remove" method="post">
+                                <input type="hidden" name="id" value="<%=taskList[i-1]._id%>">
+                                <button style="margin-top: 30px; margin-left: 20px; box-shadow: 4px 4px 2px blue;"><img src="../icons/bin.png"
+                                        width="20px" height="20px" ></button>
+                            </form>
+                            
+                        </div>
                     </div>
                 </div>
-                <div id="task-options">
-                    <div id="task-edit">
-                        <button style="margin-top: 30px; margin-left: 20px; box-shadow: 4px 4px 2px blue;"><img
-                                src="../icons/edit.png" width="20px" height="20px"></button>
-                    </div>
-                    <div id="task-remove">
-                        <button style="margin-top: 30px; margin-left: 20px; box-shadow: 4px 4px 2px blue;"><img
-                                src="../icons/bin.png" width="20px" height="20px"></button>
-                    </div>
-                </div>
-            </div>
-
+            <%}%>
 
 
         </div>
